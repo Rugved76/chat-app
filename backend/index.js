@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const {default:axios} = require("axios");
-
+var port = 3001
 const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
@@ -20,4 +20,6 @@ app.post("/authenticate", async (req, res) => {
     }
 });
 
-app.listen(3001);
+app.listen(port,()=>{
+    console.log(`Server is listening at : ${port}`);
+});
